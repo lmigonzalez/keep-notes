@@ -73,25 +73,29 @@ header{
 }
 
 
+.body-content{
+ width: 100%;
+ padding: 1rem;
+}
 
 .notes{
-  /* max-width: 1200px; */
-  width: 100%;
+
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem 2rem;
+  padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background-color: aqua; */
+ 
 
 }
 
 .card{
   margin-top: 0.5rem;
   text-align: start;
-  /* width: 100%; */
-  max-width: 1200px;
+  width: 100%;
+  /* max-width: 1200px; */
 }
 
 .add-note-form{
@@ -106,7 +110,7 @@ header{
   margin: 0 auto;
   max-width: 1200px;
   position: relative;
-  /* background-color: aqua; */
+
 }
 
 .btn-group{
@@ -144,8 +148,6 @@ header{
 
 
 footer{
-  
-  /* background-color: aqua; */
   width: 100%;
   height: 5rem;
   position: fixed;

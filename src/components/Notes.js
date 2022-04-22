@@ -13,25 +13,27 @@ const Notes = (props) => {
   // console.log(noteObj)
 
   return (
-    <section className="notes">
-      {noteObj.length === 0 ? (
-        <h2>You currently dont have any notes</h2>
-      ) : (
-        noteObj.map((element) => {
-          return (
-            <Note
-              id={element.id}
-              key={noteId()}
-              title={element.title}
-              content={element.content}
-              darkMode={props.darkMode}
-			  deleteOnClick = {props.deleteOnClick}
-            />
-          );
-        })
-      )}
+    <section className="body-content">
+      <section className="notes">
+        {noteObj.length === 0 ? (
+          <h2>You currently dont have any notes</h2>
+        ) : (
+          noteObj.map((element) => {
+            return (
+              <Note
+                id={element.id}
+                key={noteId()}
+                title={element.title}
+                content={element.content}
+                darkMode={props.darkMode}
+                deleteOnClick={props.deleteOnClick}
+              />
+            );
+          })
+        )}
 
-      <Footer />
+        <Footer />
+      </section>
     </section>
   );
 };
