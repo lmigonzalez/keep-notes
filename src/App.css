@@ -1,38 +1,174 @@
+:root{
+  --white: #fff;
+  --light: #EEEEEE;
+  --dark: #383838;
+  --darker: #191919;
+}
+
 .App {
   text-align: center;
+  min-height: 100vh;
+  --transition-delay: 1s;
+  transition: var(--transition-delay);
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+header{
+  background-color: var(--light);
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.header-group{
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+  width: 1200px;
+
+}
+
+.header-group h3{
+  font-size: 1.5rem;
+}
+
+
+
+.form-group{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+
+}
+
+.input-search{
+  width: 80%;
+}
+
+.icon{
+  font-size: 2rem;
+  margin: 0 2rem;
+  cursor: pointer;
+  animation: icon-animation 0.5s;
+}
+
+
+@keyframes icon-animation {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+.notes{
+  /* max-width: 1200px; */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* background-color: aqua; */
+
 }
 
-.App-link {
-  color: #61dafb;
+.card{
+  margin-top: 0.5rem;
+  text-align: start;
+  /* width: 100%; */
+  max-width: 1200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-note-form{
+ width: 100%;
+ margin: 0 auto;
+ padding: 0 1rem;
+}
+
+
+.form{
+  text-align: start;
+  margin: 0 auto;
+  max-width: 1200px;
+  position: relative;
+  /* background-color: aqua; */
+}
+
+.btn-group{
+  position: absolute;
+  right: 1;
+  
+  padding: 1rem;
+}
+
+.delete-icon{
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+
+/* dark mode */
+
+.App.dark{
+  background-color: #383838;
+  color: var(--light);
+}
+
+.header.dark{
+  background-color: var(--darker);
+}
+
+.card.dark{
+  background-color: var(--dark);
+  border-color: var(--light);
+}
+
+
+
+
+
+
+footer{
+  
+  /* background-color: aqua; */
+  width: 100%;
+  height: 5rem;
+  position: fixed;
+  bottom: 0;
+
+}
+
+.icon-content{
+  /* background-color: #383838; */
+  max-width: 1200px;
+  height: 3rem;
+  margin: 0 auto;
+  position: relative;
+
+}
+.add-note{
+  font-size: 4rem;
+ position: absolute;
+ right: 10px;
+ top: -20px;
+ cursor: pointer;
+}
+
+.title-length{
+  text-align: end;
 }
