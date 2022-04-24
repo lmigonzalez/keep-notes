@@ -36,7 +36,7 @@ header{
 }
 
 .header-group h3{
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 
@@ -152,22 +152,24 @@ footer{
   height: 5rem;
   position: fixed;
   bottom: 0;
+  /* pointer-events: none; */
+  /* background-color: aqua; */
 
 }
 
 .icon-content{
   /* background-color: #383838; */
   max-width: 1200px;
-  height: 3rem;
   margin: 0 auto;
-  position: relative;
+  /* position: relative; */
+  text-align: center;
 
 }
 .add-note{
   font-size: 4rem;
- position: absolute;
- right: 10px;
- top: -20px;
+ /* position: absolute;
+ right: 47%;
+ top: -30px; */
  cursor: pointer;
 }
 

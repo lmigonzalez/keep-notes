@@ -58,7 +58,7 @@ const AddNote = (props) => {
 
   const handleChange = (e) => {
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });
-    if(e.target.value.length >= 30){
+    if( e.target.name === 'title' && e.target.value.length >= 30){
       setFormValidation(null);
       setFormValidation("The title cannot have more than 30 characters")
       emptyAlertError();

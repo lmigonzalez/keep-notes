@@ -14,7 +14,8 @@ const Header = (props) => {
   const history = useHistory()
 
   const iconClick = () => {
-    setDarkMode(!darkMode);
+    localStorage.setItem('darkMode', JSON.stringify(!darkMode))
+    setDarkMode(JSON.parse(localStorage.getItem('darkMode')));
   };
 
  const handleChange = (e) =>{
@@ -32,8 +33,8 @@ const Header = (props) => {
     <header className={darkMode ? "header dark" : "header"}>
       <div className="header-group">
         
-        <Form.Group className="mb-3 form-group" controlId="exampleForm.ControlInput1">
-        <Form.Control className="input-search" size="lg" type="text" placeholder="Search for a note" onChange= {handleChange}/>
+        <Form.Group className="mb-1 form-group" controlId="exampleForm.ControlInput1">
+        <Form.Control className="input-search" size="m" type="text" placeholder="Search for a note" onChange= {handleChange}/>
         <div>
           {!darkMode ? (
             <BsFillMoonStarsFill className="icon" onClick={iconClick} />

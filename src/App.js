@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 
@@ -16,52 +16,63 @@ function App() {
  
 
   const initialObj = [
-    {
-      id: 1,
-      title: 'Better',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      id: 2,
-      title: 'Narcos',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      id: 3,
-      title: 'Vikings',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      id: 4,
-      title: 'Dexter',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      id: 5,
-      title: 'Saw',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      id: 6,
-      title: 'Breaking',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      id: 7,
-      title: 'Morgan',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      id: 8,
-      title: 'Pablo',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      id: 9,
-      title: 'Cali',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
+    // {
+    //   id: 1,
+    //   title: 'Better',
+    //   content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // },
+    // {
+    //   id: 2,
+    //   title: 'Narcos',
+    //   content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // },
+    // {
+    //   id: 3,
+    //   title: 'Vikings',
+    //   content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // },
+    // {
+    //   id: 4,
+    //   title: 'Dexter',
+    //   content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // },
+    // {
+    //   id: 5,
+    //   title: 'Saw',
+    //   content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // },
+    // {
+    //   id: 6,
+    //   title: 'Breaking',
+    //   content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // },
+    // {
+    //   id: 7,
+    //   title: 'Morgan',
+    //   content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // },
+    // {
+    //   id: 8,
+    //   title: 'Pablo',
+    //   content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // },
+    // {
+    //   id: 9,
+    //   title: 'Cali',
+    //   content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    // },
   ];
+
+  useEffect(()=>{
+    if(localStorage.getItem("object")){
+        const storedList = JSON.parse(localStorage.getItem("object"));
+        setNoteObj(storedList);
+    }
+    if(localStorage.getItem("darkMode")){
+      setDarkMode(JSON.parse(localStorage.getItem('darkMode')))
+    }
+},[])
+
 
   const [noteObj, setNoteObj] = useState(initialObj);
   const [darkMode, setDarkMode] = useState(false);
@@ -69,11 +80,17 @@ function App() {
   const [search, setSearch] = useState('')
 
 
+
+
   const onSubmit = (newObj) =>{
+    localStorage.setItem('object', JSON.stringify([...noteObj, newObj]))
     setNoteObj([
       ...noteObj, newObj
     ])
-    // noteObj.push(newObj)
+
+
+  
+    
   }
 
   const deleteOnClick = (id) =>{
@@ -82,6 +99,7 @@ function App() {
     })
     
     setNoteObj(deleteNote)
+    localStorage.setItem('object', JSON.stringify(deleteNote))
 
   
   }
@@ -99,7 +117,7 @@ function App() {
           <AddNote onSubmit = {onSubmit} darkMode = {darkMode} noteObj={noteObj}/>
         </Route>
         <Route path='/search' exact>
-          <Search noteObj = {noteObj} search={search}/>
+          <Search noteObj = {noteObj} search={search} darkMode={darkMode}/>
         </Route>
       </Switch>
     </div>
