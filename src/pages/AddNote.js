@@ -44,6 +44,7 @@ const AddNote = (props) => {
       setSuccessAdded(true);
       emptyAlertSuccess();
       setInputValue(initialInputValue);
+      history.push("/");
     } else if (inputValue.title.length < 3) {
       setFormValidation(null);
       emptyAlertError();
@@ -114,7 +115,7 @@ const AddNote = (props) => {
           <p className="title-length">{inputValue.title.length}/30</p>
         </Form.Group>
         <Form.Group  controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Example textarea</Form.Label>
+          <Form.Label>Content</Form.Label>
           <Form.Control
             as="textarea"
             name="content"
