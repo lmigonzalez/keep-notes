@@ -15,14 +15,16 @@ const Search = (props) => {
   return (
     <section className="body-content">
       <section className="notes">
-        {noteObj.map((val) => {
-          if (val.title.toLowerCase().includes(search.toLowerCase())) {
+        {noteObj.map((element) => {
+          if (element.title.toLowerCase().includes(search.toLowerCase())) {
             return (
               <Note
+			  	id={element.id}
                 key={noteId()}
-                title={val.title}
-                content={val.content}
+                title={element.title}
+                content={element.content}
                 darkMode={props.darkMode}
+				deleteOnClick={props.deleteOnClick}
               />
             );
           }
