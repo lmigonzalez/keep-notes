@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const AddNote = (props) => {
   const { noteObj } = props;
   const history = useHistory();
-  // console.log(props)
+
 
   const noteId = () => {
     const randomNum = Math.random() * 1000000;

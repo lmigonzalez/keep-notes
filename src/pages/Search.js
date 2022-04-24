@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Note from "../components/Note";
 
 const Search = (props) => {
   const { noteObj, search } = props;
 
-  const [noMatch, setNoMatch] = useState(false);
 
-  const noteId = (props) => {
+
+  const noteId = () => {
     const randomNum = Math.random() * 1000000;
     return randomNum;
   };

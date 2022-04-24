@@ -74,7 +74,7 @@ function App() {
 },[])
 
 
-  const [noteObj, setNoteObj] = useState(initialObj);
+  const [noteObj, setNoteObj] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
 
   const [search, setSearch] = useState('')

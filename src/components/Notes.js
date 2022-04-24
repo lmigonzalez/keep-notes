@@ -4,13 +4,13 @@ import Footer from "./Footer";
 import Note from "./Note";
 
 const Notes = (props) => {
-  const { noteObj, search } = props;
+  const { noteObj } = props;
 
   const noteId = () => {
     const randomNum = Math.random() * 1000000;
     return randomNum;
   };
-  // console.log(noteObj)
+
 
   return (
     <section className="body-content">

@@ -9,7 +9,7 @@ import {
 } from "react-icons/bs";
 
 const Header = (props) => {
-  const { darkMode, setDarkMode, noteObj, setSearch } = props;
+  const { darkMode, setDarkMode, setSearch } = props;
 
   const history = useHistory()
 
