@@ -12,6 +12,7 @@ const Notes = (props) => {
   };
 
 
+
   return (
     <section className="body-content">
       <section className="notes">
