@@ -1,7 +1,7 @@
 # <center> Keep Notes </center>
 
 ## A brief description: ##
-This is a Full Stack App where you have the option to get some great quotes. You can copy and share quotes white a single click. But it doesn't stop there. The fun part comes when you register and log in. Once you log in, you can submit and give likes to quotes. You can go to your profile and edit or delete any quote you have previously created. If you leave the website and come back in another moment, you won't have to log in since I configured the section to last one year unless you're logged out. User Data and Quote data get saved in a MongoDB database.
+This website has some exciting features. For example, users can create notes and then search by note title. The website also has some validation: all note fields must be filled to be able to submit, the note title input field has length validation, and notes can't have the same title. Users can switch from Light Mode to Dark Mode. Notes and chosen Mode get saved in localStorage, so users don't lose data by closing the browser. And, of course, this website is fully responsive.
 
 
 ## The techs I use: ##
